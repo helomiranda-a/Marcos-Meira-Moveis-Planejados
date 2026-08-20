@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Marcos Meira — Móveis Planejados</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --marrom-escuro: #24140d;
+      --marrom: #4b2d1d;
+      --marrom-medio: #6b432c;
+      --caramelo: #95683f;
+      --bege: #c9a67d;
+      --creme: #f6efe6;
+      --branco: #fffaf4;
+      --texto: #2d211a;
+      --cinza: #75685e;
+      --linha: #e4d7c8;
+      --whatsapp: #25D366;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--creme);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 25px 0;
+      color: white;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .logo span {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 7px;
+      opacity: .7;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13px;
+    }
+
+    nav a {
+      color: rgba(255,255,255,.88);
+    }
+
+    .nav-button {
+      background: white;
+      color: var(--marrom-escuro);
+      padding: 12px 19px;
+      border-radius: 50px;
+      font-weight: 700;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: white;
+
+      /* Foto do cliente: cozinha planejada */
+      background:
+        linear-gradient(
+          90deg,
+          rgba(24,13,8,.92) 0%,
+          rgba(24,13,8,.70) 48%,
+          rgba(24,13,8,.20) 100%
+        ),
+        url("__COZINHA__") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      padding-top: 60px;
+    }
+
+    .eyebrow {
+      color: #dfc19d;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: .98;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: rgba(255,255,255,.82);
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px 23px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .button-primary {
+      background: var(--caramelo);
+      color: white;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #a9784d;
+    }
+
+    .button-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.4);
+    }
+
+    /* ================= TRUST ================= */
+
+    .trust {
+      background: var(--marrom-escuro);
+      color: white;
+      padding: 22px 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+
+    .trust-item {
+      border-right: 1px solid rgba(255,255,255,.12);
+      font-size: 12px;
+      color: rgba(255,255,255,.6);
+      padding: 5px 15px;
+    }
+
+    .trust-item:last-child {
+      border: none;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: white;
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .label {
+      color: var(--caramelo);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .title {
+      font-family: "Playfair Display", serif;
+      color: var(--marrom-escuro);
+      font-size: clamp(36px, 4.5vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .text {
+      color: var(--cinza);
+      line-height: 1.8;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    /* ================= INTRO ================= */
+
+    .intro {
+      background: var(--creme);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .intro-image {
+      height: 540px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    .intro-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--marrom);
+      color: white;
+      font-size: 11px;
+    }
+
+    /* ================= PROJETOS ================= */
+
+    .projects {
+      background: var(--branco);
+    }
+
+    .center-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .center-heading .title {
+      margin: auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr .85fr;
+      grid-template-rows: 300px 300px;
+      gap: 5px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.025);
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      background: rgba(36,20,13,.88);
+      color: white;
+      padding: 8px 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    /* ================= DIFERENCIAIS ================= */
+
+    .difference {
+      background: var(--marrom);
+      color: white;
+    }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 85px;
+      align-items: center;
+    }
+
+    .difference .title {
+      color: white;
+    }
+
+    .difference .text {
+      color: rgba(255,255,255,.65);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .feature {
+      border-top: 1px solid rgba(255,255,255,.16);
+      padding-top: 18px;
+    }
+
+    .feature-number {
+      color: #d0a978;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .feature h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 8px 0;
+    }
+
+    .feature p {
+      color: rgba(255,255,255,.6);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* ================= PROCESSO ================= */
+
+    .process {
+      background: var(--creme);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 50px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--linha);
+      padding: 28px;
+      min-height: 220px;
+    }
+
+    .step-number {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      color: var(--bege);
+    }
+
+    .step h3 {
+      font-size: 16px;
+      margin: 10px 0 8px;
+      color: var(--marrom-escuro);
+    }
+
+    .step p {
+      color: var(--cinza);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      color: white;
+      text-align: center;
+
+      /* Foto do cliente: quarto planejado */
+      background:
+        linear-gradient(
+          rgba(36,20,13,.88),
+          rgba(36,20,13,.88)
+        ),
+        url("__QUARTO2__") center/cover no-repeat;
+    }
+
+    .cta .title {
+      color: white;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 20px auto 28px;
+      color: rgba(255,255,255,.72);
+      line-height: 1.7;
+    }
+
+    /* ================= CONTATO ================= */
+
+    .contact {
+      background: var(--branco);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .details {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .detail {
+      display: flex;
+      gap: 13px;
+    }
+
+    .detail-icon {
+      flex: 0 0 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--creme);
+      color: var(--marrom);
+      font-weight: 700;
+    }
+
+    .detail strong {
+      display: block;
+      font-size: 13px;
+      color: var(--marrom-escuro);
+    }
+
+    .detail span {
+      display: block;
+      color: var(--cinza);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .contact-card {
+      background: var(--marrom-escuro);
+      color: white;
+      padding: 42px;
+      border-radius: 6px;
+    }
+
+    .contact-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,.64);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .contact-card .button {
+      width: 100%;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #170c07;
+      color: white;
+      padding: 30px 0;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,.4);
+      font-size: 11px;
+    }
+
+    /* ================= WHATSAPP ================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: white;
+      display: grid;
+      place-items: center;
+      z-index: 100;
+      font-size: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      transition: .3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* ================= RESPONSIVO ================= */
+
+    @media (max-width: 900px) {
+
+      nav a:not(.nav-button) {
+        display: none;
+      }
+
+      .intro-grid,
+      .difference-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .difference-grid {
+        gap: 55px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 240px 240px 240px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .container {
+        width: 88%;
+      }
+
+      .hero {
+        min-height: 700px;
+        background-position: 62% center;
+      }
+
+      h1 {
+        font-size: 49px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .trust-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+        padding-bottom: 12px;
+      }
+
+      .trust-item:last-child {
+        border: none;
+      }
+
+      .intro-image {
+        height: 340px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 280px);
+      }
+
+      .gallery-item:first-child {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 30px;
+      }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#" class="logo">
+        Marcos Meira
+        <span>Móveis Planejados</span>
+      </a>
+
+      <nav>
+        <a href="#projetos">Projetos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#processo">Como funciona</a>
+
+        <a
+          href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+          target="_blank"
+          class="nav-button"
+        >
+          Solicitar orçamento
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Móveis planejados sob medida
+        </div>
+
+        <h1>
+          Seu espaço.<br>
+          Do seu jeito.
+        </h1>
+
+        <p>
+          Projetos planejados para aproveitar melhor cada ambiente,
+          unir funcionalidade e beleza e transformar suas ideias em
+          espaços pensados para a sua rotina.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+            target="_blank"
+            class="button button-primary"
+          >
+            Quero meu orçamento
+          </a>
+
+          <a href="#projetos" class="button button-outline">
+            Ver projetos
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= TRUST ================= -->
+
+  <div class="trust">
+
+    <div class="container trust-grid">
+
+      <div class="trust-item">
+        <strong>Projetos sob medida</strong>
+        Pensados para cada ambiente
+      </div>
+
+      <div class="trust-item">
+        <strong>Atendimento personalizado</strong>
+        Do projeto à execução
+      </div>
+
+      <div class="trust-item">
+        <strong>Ilhéus — Bahia</strong>
+        Atendimento local
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= INTRO ================= -->
+
+  <section class="intro">
+
+    <div class="container intro-grid">
+
+      <div>
+
+        <div class="label">
+          Um projeto pensado para você
+        </div>
+
+        <h2 class="title">
+          Mais aproveitamento. Mais organização. Mais identidade.
+        </h2>
+
+        <p class="text">
+          Móveis planejados permitem que cada detalhe do ambiente
+          seja pensado de acordo com suas necessidades, medidas
+          e estilo.
+        </p>
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <span class="check">✓</span>
+            Aproveitamento inteligente do espaço
+          </div>
+
+          <div class="benefit">
+            <span class="check">✓</span>
+            Projeto pensado para sua rotina
+          </div>
+
+          <div class="benefit">
+            <span class="check">✓</span>
+            Escolha de acabamentos e composição
+          </div>
+
+          <div class="benefit">
+            <span class="check">✓</span>
+            Atendimento personalizado
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Foto do cliente: quarto planejado, vista para o mar -->
+
+      <div class="intro-image">
+        <img
+          src="__QUARTO1__"
+          alt="Quarto planejado com vista para o mar"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROJETOS ================= -->
+
+  <section class="projects" id="projetos">
+
+    <div class="container">
+
+      <div class="center-heading">
+
+        <div class="label">
+          Projetos
+        </div>
+
+        <h2 class="title">
+          Ambientes que mostram o potencial de um bom planejamento.
+        </h2>
+
+        <p class="text">
+          Inspire-se em diferentes soluções e imagine o seu próximo projeto.
+        </p>
+
+      </div>
+
+
+      <div class="gallery">
+
+        <!-- Foto do cliente: cozinha planejada -->
+
+        <div class="gallery-item">
+
+          <img
+            src="__COZINHA__"
+            alt="Cozinha planejada"
+          >
+
+          <span class="photo-label">
+            Cozinha planejada
+          </span>
+
+        </div>
+
+
+        <!-- Foto do cliente: quarto, vista para o mar -->
+
+        <div class="gallery-item">
+
+          <img
+            src="__QUARTO1__"
+            alt="Quarto planejado com vista para o mar"
+          >
+
+          <span class="photo-label">
+            Quarto — vista mar
+          </span>
+
+        </div>
+
+
+        <!-- Foto do cliente: quarto planejado -->
+
+        <div class="gallery-item">
+
+          <img
+            src="__QUARTO2__"
+            alt="Quarto planejado"
+          >
+
+          <span class="photo-label">
+            Quarto planejado
+          </span>
+
+        </div>
+
+
+        <!-- Foto do cliente: sala de estar -->
+
+        <div class="gallery-item">
+
+          <img
+            src="__SALA__"
+            alt="Sala de estar planejada"
+          >
+
+          <span class="photo-label">
+            Sala de estar
+          </span>
+
+        </div>
+
+
+        <!-- Foto do cliente: sala de jantar -->
+
+        <div class="gallery-item">
+
+          <img
+            src="__SALAJANTAR__"
+            alt="Sala de jantar planejada"
+          >
+
+          <span class="photo-label">
+            Sala de jantar
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= DIFERENCIAIS ================= -->
+
+  <section class="difference" id="diferenciais">
+
+    <div class="container difference-grid">
+
+      <div>
+
+        <div class="label">
+          Por que planejar?
+        </div>
+
+        <h2 class="title">
+          Cada centímetro pode fazer diferença.
+        </h2>
+
+        <p class="text">
+          Um móvel planejado não precisa apenas preencher um espaço.
+          Ele pode facilitar a rotina, organizar melhor o ambiente
+          e deixar a casa mais alinhada ao seu estilo.
+        </p>
+
+      </div>
+
+
+      <div class="features">
+
+        <div class="feature">
+
+          <span class="feature-number">
+            01
+          </span>
+
+          <h3>
+            Medidas precisas
+          </h3>
+
+          <p>
+            Uma solução pensada para o ambiente e para o espaço disponível.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <span class="feature-number">
+            02
+          </span>
+
+          <h3>
+            Seu estilo
+          </h3>
+
+          <p>
+            Composição e acabamentos escolhidos para combinar com você.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <span class="feature-number">
+            03
+          </span>
+
+          <h3>
+            Mais organização
+          </h3>
+
+          <p>
+            Espaços planejados para deixar a rotina mais prática.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <span class="feature-number">
+            04
+          </span>
+
+          <h3>
+            Projeto personalizado
+          </h3>
+
+          <p>
+            Cada ambiente parte das necessidades reais de quem vai utilizá-lo.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROCESSO ================= -->
+
+  <section class="process" id="processo">
+
+    <div class="container">
+
+      <div class="center-heading">
+
+        <div class="label">
+          Como funciona
+        </div>
+
+        <h2 class="title">
+          Seu projeto começa com uma conversa.
+        </h2>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">
+            01
+          </div>
+
+          <h3>
+            Conte o que você precisa
+          </h3>
+
+          <p>
+            Chame no WhatsApp e fale sobre o ambiente que deseja transformar.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            02
+          </div>
+
+          <h3>
+            Definimos o projeto
+          </h3>
+
+          <p>
+            Conversamos sobre medidas, necessidades, estilo e possibilidades.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <h3>
+            Produção
+          </h3>
+
+          <p>
+            Com o projeto aprovado, começa a etapa de produção dos móveis.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            04
+          </div>
+
+          <h3>
+            Instalação
+          </h3>
+
+          <p>
+            O projeto sai do papel e passa a fazer parte do seu ambiente.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CTA ================= -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="label">
+        Pronto para começar?
+      </div>
+
+      <h2 class="title">
+        Vamos conversar sobre o ambiente que você quer transformar.
+      </h2>
+
+      <p>
+        Conte o que você tem em mente e fale diretamente com
+        a Marcos Meira Móveis Planejados.
+      </p>
+
+      <a
+        href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+        target="_blank"
+        class="button button-primary"
+      >
+        Solicitar orçamento pelo WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTATO ================= -->
+
+  <section class="contact" id="contato">
+
+    <div class="container contact-grid">
+
+      <div>
+
+        <div class="label">
+          Fale conosco
+        </div>
+
+        <h2 class="title">
+          Seu próximo projeto pode começar agora.
+        </h2>
+
+        <p class="text">
+          Entre em contato para conversar sobre o ambiente,
+          suas necessidades e as possibilidades para o seu projeto.
+        </p>
+
+
+        <div class="details">
+
+          <div class="detail">
+
+            <div class="detail-icon">
+              W
+            </div>
+
+            <div>
+              <strong>WhatsApp</strong>
+              <span>(73) 98866-7520</span>
+            </div>
+
+          </div>
+
+
+          <div class="detail">
+
+            <div class="detail-icon">
+              @
+            </div>
+
+            <div>
+              <strong>E-mail</strong>
+              <span>mmeira04@gmail.com</span>
+            </div>
+
+          </div>
+
+
+          <div class="detail">
+
+            <div class="detail-icon">
+              ⌖
+            </div>
+
+            <div>
+              <strong>Endereço</strong>
+
+              <span>
+                R. Parque Verde, 250 — Hernani Sá<br>
+                Ilhéus — BA, 45656-623
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h3>
+          Vamos falar do seu projeto?
+        </h3>
+
+        <p>
+          O primeiro passo é simples: envie uma mensagem e conte
+          qual ambiente você deseja planejar.
+        </p>
+
+        <a
+          href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+          target="_blank"
+          class="button button-primary"
+        >
+          Falar pelo WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container footer">
+
+      <div class="footer-brand">
+        Marcos Meira — Móveis Planejados
+      </div>
+
+      <div class="footer-copy">
+        © 2026 Marcos Meira Móveis Planejados
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= WHATSAPP FLUTUANTE ================= -->
+
+  <a
+    class="whatsapp"
+    target="_blank"
+    aria-label="Abrir WhatsApp"
+    href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+  >
+    W
+  </a>
+
+</body>
+</html>
