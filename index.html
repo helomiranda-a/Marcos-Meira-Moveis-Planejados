@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -170,7 +171,7 @@
           rgba(42,25,17,0.38) 75%,
           rgba(42,25,17,0.20) 100%
         ),
-        url("images/sala-estar.jpg") center/cover no-repeat;
+        url("images/quarto-vista-mar.jpg") center/cover no-repeat;
 
       display: flex;
       align-items: center;
@@ -497,19 +498,23 @@
     }
 
     .gallery {
-  max-width: 1150px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-rows: 300px 300px;
+      gap: 15px;
+    }
 
-.gallery-item {
-  overflow: hidden;
-  position: relative;
-  aspect-ratio: 1 / 1;
-  background: linear-gradient(135deg, #6e4b37, #b98b65);
-[}
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #6e4b37, #b98b65);
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
 
     .gallery-item img {
       width: 100%;
@@ -1135,7 +1140,7 @@
 
       <div class="gallery-item reveal">
 
-        <
+        <img
           src="images/cozinha-planejada.jpg"
           alt="Cozinha planejada com marcenaria sob medida"
         />
@@ -1147,27 +1152,16 @@
       </div>
 
 
-    <div class="gallery-item reveal">
-  <img src="./cozinha-planejada.jpg" alt="Cozinha Planejada">
-  <div class="gallery-overlay">
-    <span>Cozinha planejada</span>
-  </div>
-</div>
+      <div class="gallery-item reveal">
 
-<div class="gallery-item reveal">
-  <img src="./sala-estar.jpg" alt="Sala de Estar">
-  <div class="gallery-overlay">
-    <span>Sala de estar</span>
-  </div>
-</div>
+        <img
+          src="images/sala-estar.jpg"
+          alt="Sala de estar com estante planejada"
+        />
 
-<div class="gallery-item reveal">
-  <img src="./quarto-marcenaria.jpg" alt="Quarto Marcenaria">
-  <div class="gallery-overlay">
-    <span>Quarto marcenaria</span>
-  </div>
-</div>
-
+        <div class="gallery-overlay">
+          <span>Sala de estar</span>
+        </div>
 
       </div>
 
