@@ -1,1354 +1,1507 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Marcos Meira — Móveis Planejados</title>
- 
+
+  <meta
+    name="description"
+    content="Marcos Meira — Móveis Planejados. Projetos sob medida, elegância e acabamento para transformar seus ambientes."
+  />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
- 
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     :root {
-      --marrom-escuro: #24140d;
-      --marrom: #4b2d1d;
-      --marrom-medio: #6b432c;
-      --caramelo: #95683f;
-      --bege: #c9a67d;
-      --creme: #f6efe6;
-      --branco: #fffaf4;
-      --texto: #2d211a;
-      --cinza: #75685e;
-      --linha: #e4d7c8;
-      --whatsapp: #25D366;
+      --espresso: #24150f;
+      --coffee: #382118;
+      --brown: #5a3827;
+      --caramel: #a8754f;
+      --light-caramel: #c89a72;
+      --cream: #f4ede4;
+      --beige: #e7d6c3;
+      --white: #fffaf5;
+      --text: #2b1b13;
+      --muted: #765f50;
+
+      --serif: "Cormorant Garamond", serif;
+      --sans: "DM Sans", sans-serif;
     }
- 
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
- 
+
     html {
       scroll-behavior: smooth;
     }
- 
+
     body {
-      font-family: "DM Sans", sans-serif;
-      background: var(--creme);
-      color: var(--texto);
+      font-family: var(--sans);
+      background: var(--white);
+      color: var(--text);
       overflow-x: hidden;
     }
- 
-    img {
-      width: 100%;
-      display: block;
-    }
- 
+
     a {
       text-decoration: none;
       color: inherit;
     }
- 
-    .container {
-      width: min(1160px, 90%);
-      margin: auto;
+
+    button {
+      font-family: inherit;
     }
- 
-    /* ================= HEADER ================= */
- 
+
+    /* =========================
+       SCROLL BAR
+    ========================= */
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--cream);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--caramel);
+      border-radius: 20px;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 10;
-      padding: 25px 0;
-      color: white;
+      z-index: 1000;
+      padding: 20px 6%;
+      transition: 0.4s ease;
     }
- 
+
+    header.scrolled {
+      background: rgba(36, 21, 15, 0.96);
+      backdrop-filter: blur(15px);
+      padding: 13px 6%;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
     .nav {
+      max-width: 1250px;
+      margin: auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
- 
+
     .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 24px;
-      line-height: 1;
+      color: white;
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
- 
+
     .logo span {
       display: block;
-      font-family: "DM Sans", sans-serif;
-      font-size: 9px;
+      font-family: var(--sans);
+      font-size: 8px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-top: 7px;
-      opacity: .7;
+      opacity: 0.7;
+      margin-top: -3px;
     }
- 
+
     nav {
       display: flex;
+      gap: 34px;
       align-items: center;
-      gap: 28px;
-      font-size: 13px;
     }
- 
+
     nav a {
-      color: rgba(255,255,255,.88);
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      transition: 0.3s;
     }
- 
-    .nav-button {
-      background: white;
-      color: var(--marrom-escuro);
-      padding: 12px 19px;
-      border-radius: 50px;
-      font-weight: 700;
+
+    nav a:hover {
+      color: var(--light-caramel);
     }
- 
-    /* ================= HERO ================= */
- 
-    .hero {
-      min-height: 760px;
-      display: flex;
-      align-items: center;
-      position: relative;
+
+    .nav-cta {
+      background: var(--caramel);
       color: white;
- 
-      /* Foto do cliente: cozinha planejada */
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-cta:hover {
+      background: var(--light-caramel);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
       background:
         linear-gradient(
           90deg,
-          rgba(24,13,8,.92) 0%,
-          rgba(24,13,8,.70) 48%,
-          rgba(24,13,8,.20) 100%
+          rgba(27,15,10,0.97) 0%,
+          rgba(42,25,17,0.90) 42%,
+          rgba(42,25,17,0.38) 75%,
+          rgba(42,25,17,0.20) 100%
         ),
-        url("__COZINHA__") center/cover no-repeat;
-    }
- 
-    .hero-content {
-      max-width: 700px;
-      padding-top: 60px;
-    }
- 
-    .eyebrow {
-      color: #dfc19d;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 10px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
- 
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(48px, 7vw, 78px);
-      line-height: .98;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
-      font-weight: 600;
-    }
- 
-    .hero p {
-      max-width: 600px;
-      color: rgba(255,255,255,.82);
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 32px;
-    }
- 
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
- 
-    .button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 16px 23px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      transition: .3s;
-    }
- 
-    .button-primary {
-      background: var(--caramelo);
-      color: white;
-    }
- 
-    .button-primary:hover {
-      transform: translateY(-2px);
-      background: #a9784d;
-    }
- 
-    .button-outline {
-      color: white;
-      border: 1px solid rgba(255,255,255,.4);
-    }
- 
-    /* ================= TRUST ================= */
- 
-    .trust {
-      background: var(--marrom-escuro);
-      color: white;
-      padding: 22px 0;
-    }
- 
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-    }
- 
-    .trust-item {
-      border-right: 1px solid rgba(255,255,255,.12);
-      font-size: 12px;
-      color: rgba(255,255,255,.6);
-      padding: 5px 15px;
-    }
- 
-    .trust-item:last-child {
-      border: none;
-    }
- 
-    .trust-item strong {
-      display: block;
-      color: white;
-      font-size: 13px;
-      margin-bottom: 3px;
-    }
- 
-    /* ================= SECTIONS ================= */
- 
-    section {
-      padding: 105px 0;
-    }
- 
-    .label {
-      color: var(--caramelo);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 10px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
- 
-    .title {
-      font-family: "Playfair Display", serif;
-      color: var(--marrom-escuro);
-      font-size: clamp(36px, 4.5vw, 56px);
-      line-height: 1.05;
-      letter-spacing: -1px;
-    }
- 
-    .text {
-      color: var(--cinza);
-      line-height: 1.8;
-      font-size: 16px;
-      margin-top: 20px;
-    }
- 
-    /* ================= INTRO ================= */
- 
-    .intro {
-      background: var(--creme);
-    }
- 
-    .intro-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 80px;
-      align-items: center;
-    }
- 
-    .intro-image {
-      height: 540px;
-      overflow: hidden;
-      border-radius: 5px;
-    }
- 
-    .intro-image img {
-      height: 100%;
-      object-fit: cover;
-    }
- 
-    .benefits {
-      display: grid;
-      gap: 13px;
-      margin-top: 28px;
-    }
- 
-    .benefit {
+        url("SUA-IMAGEM-PRINCIPAL-AQUI.jpg") center/cover no-repeat;
+
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 14px;
-    }
- 
-    .check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--marrom);
-      color: white;
-      font-size: 11px;
-    }
- 
-    /* ================= PROJETOS ================= */
- 
-    .projects {
-      background: var(--branco);
-    }
- 
-    .center-heading {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 50px;
-    }
- 
-    .center-heading .title {
-      margin: auto;
-    }
- 
-    .gallery {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr .85fr;
-      grid-template-rows: 300px 300px;
-      gap: 5px;
-    }
- 
-    .gallery-item {
       position: relative;
       overflow: hidden;
     }
- 
-    .gallery-item:first-child {
-      grid-row: 1 / 3;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -150px;
+      right: -100px;
+      width: 450px;
+      height: 450px;
+      border: 1px solid rgba(200,154,114,0.25);
+      border-radius: 50%;
+      animation: rotateCircle 25s linear infinite;
     }
- 
+
+    @keyframes rotateCircle {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-content {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+      padding-top: 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--light-caramel);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .hero h1 {
+      color: white;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(58px, 8vw, 105px);
+      line-height: 0.87;
+      max-width: 800px;
+      margin-bottom: 30px;
+      animation: fadeUp 1s 0.15s ease both;
+    }
+
+    .hero h1 em {
+      color: var(--light-caramel);
+      font-style: normal;
+    }
+
+    .hero-description {
+      max-width: 520px;
+      color: rgba(255,255,255,0.78);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 35px;
+      animation: fadeUp 1s 0.3s ease both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp 1s 0.45s ease both;
+    }
+
+    .btn {
+      padding: 16px 25px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.35s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .btn-primary {
+      background: var(--caramel);
+      color: white;
+      box-shadow: 0 12px 30px rgba(168,117,79,0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--light-caramel);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px rgba(168,117,79,0.35);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--coffee);
+      transform: translateY(-3px);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 35px;
+      left: 6%;
+      color: rgba(255,255,255,0.5);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .scroll-indicator::after {
+      content: "";
+      width: 50px;
+      height: 1px;
+      background: var(--light-caramel);
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 110px 7%;
+      background: var(--cream);
+    }
+
+    .intro-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .section-number {
+      color: var(--caramel);
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .intro h2 {
+      font-family: var(--serif);
+      font-size: clamp(44px, 5vw, 70px);
+      line-height: 0.95;
+      font-weight: 500;
+    }
+
+    .intro h2 span {
+      color: var(--caramel);
+    }
+
+    .intro-text {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .intro-text p + p {
+      margin-top: 18px;
+    }
+
+    /* =========================
+       DIFERENCIAIS
+    ========================= */
+
+    .features {
+      padding: 100px 7%;
+      background: var(--white);
+    }
+
+    .section-header {
+      max-width: 1150px;
+      margin: auto;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header .small-title {
+      color: var(--caramel);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .section-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5vw, 65px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .feature-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #dfd0c1;
+      border-bottom: 1px solid #dfd0c1;
+    }
+
+    .feature {
+      padding: 45px 30px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .feature + .feature {
+      border-left: 1px solid #dfd0c1;
+    }
+
+    .feature:hover {
+      background: var(--cream);
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      width: 55px;
+      height: 55px;
+      border: 1px solid var(--caramel);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      color: var(--caramel);
+      font-size: 20px;
+    }
+
+    .feature h3 {
+      font-family: var(--serif);
+      font-size: 27px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       PORTFÓLIO
+    ========================= */
+
+    .portfolio {
+      background: var(--espresso);
+      padding: 110px 7%;
+      color: white;
+    }
+
+    .portfolio-header {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 50px;
+      gap: 30px;
+    }
+
+    .portfolio-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(45px, 6vw, 75px);
+      line-height: 0.9;
+      font-weight: 500;
+    }
+
+    .portfolio-header p {
+      color: rgba(255,255,255,0.55);
+      max-width: 330px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .gallery {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-rows: 300px 300px;
+      gap: 15px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #6e4b37, #b98b65);
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: .5s;
+      display: block;
+      transition: 0.7s ease;
     }
- 
+
     .gallery-item:hover img {
-      transform: scale(1.025);
+      transform: scale(1.06);
     }
- 
-    .photo-label {
+
+    .gallery-overlay {
       position: absolute;
-      left: 18px;
-      bottom: 18px;
-      background: rgba(36,20,13,.88);
-      color: white;
-      padding: 8px 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 9px;
-      font-weight: 700;
+      inset: 0;
+      background: linear-gradient(
+        transparent 45%,
+        rgba(25,14,9,0.85)
+      );
+      display: flex;
+      align-items: end;
+      padding: 25px;
+      opacity: 0;
+      transition: 0.4s;
     }
- 
-    /* ================= DIFERENCIAIS ================= */
- 
-    .difference {
-      background: var(--marrom);
-      color: white;
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
     }
- 
-    .difference-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 85px;
-      align-items: center;
+
+    .gallery-overlay span {
+      font-family: var(--serif);
+      font-size: 25px;
     }
- 
-    .difference .title {
-      color: white;
-    }
- 
-    .difference .text {
-      color: rgba(255,255,255,.65);
-    }
- 
-    .features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
- 
-    .feature {
-      border-top: 1px solid rgba(255,255,255,.16);
-      padding-top: 18px;
-    }
- 
-    .feature-number {
-      color: #d0a978;
-      font-size: 10px;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
- 
-    .feature h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      margin: 8px 0;
-    }
- 
-    .feature p {
-      color: rgba(255,255,255,.6);
-      font-size: 13px;
-      line-height: 1.65;
-    }
- 
-    /* ================= PROCESSO ================= */
- 
+
+    /* =========================
+       PROCESSO
+    ========================= */
+
     .process {
-      background: var(--creme);
+      padding: 110px 7%;
+      background: var(--beige);
     }
- 
-    .steps {
+
+    .process-grid {
+      max-width: 1150px;
+      margin: auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 50px;
+      gap: 0;
+      margin-top: 60px;
     }
- 
+
     .step {
-      background: white;
-      border: 1px solid var(--linha);
-      padding: 28px;
-      min-height: 220px;
+      position: relative;
+      padding: 30px;
+      border-top: 1px solid rgba(90,56,39,0.35);
     }
- 
+
+    .step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 30px;
+      width: 1px;
+      height: 75px;
+      background: rgba(90,56,39,0.25);
+    }
+
     .step-number {
-      font-family: "Playfair Display", serif;
-      font-size: 42px;
-      color: var(--bege);
+      color: var(--caramel);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 25px;
     }
- 
+
     .step h3 {
-      font-size: 16px;
-      margin: 10px 0 8px;
-      color: var(--marrom-escuro);
+      font-family: var(--serif);
+      font-size: 28px;
+      margin-bottom: 10px;
     }
- 
+
     .step p {
-      color: var(--cinza);
-      font-size: 13px;
-      line-height: 1.65;
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--muted);
     }
- 
-    /* ================= CTA ================= */
- 
+
+    /* =========================
+       CTA
+    ========================= */
+
     .cta {
-      color: white;
-      text-align: center;
- 
-      /* Foto do cliente: quarto planejado */
+      padding: 120px 7%;
       background:
         linear-gradient(
-          rgba(36,20,13,.88),
-          rgba(36,20,13,.88)
+          110deg,
+          rgba(36,21,15,0.97),
+          rgba(78,48,34,0.92)
         ),
-        url("__QUARTO2__") center/cover no-repeat;
-    }
- 
-    .cta .title {
+        url("SUA-IMAGEM-CTA-AQUI.jpg") center/cover;
+      text-align: center;
       color: white;
-      max-width: 800px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(200,154,114,0.2);
+      border-radius: 50%;
+      left: -170px;
+      top: -170px;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
       margin: auto;
     }
- 
+
+    .cta .small-title {
+      color: var(--light-caramel);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 0.9;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
     .cta p {
-      max-width: 600px;
-      margin: 20px auto 28px;
-      color: rgba(255,255,255,.72);
+      color: rgba(255,255,255,0.7);
       line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 35px;
     }
- 
-    /* ================= CONTATO ================= */
- 
+
+    /* =========================
+       CONTACT
+    ========================= */
+
     .contact {
-      background: var(--branco);
+      padding: 90px 7%;
+      background: var(--cream);
     }
- 
+
     .contact-grid {
+      max-width: 1150px;
+      margin: auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: start;
     }
- 
-    .details {
-      display: grid;
-      gap: 18px;
-      margin-top: 30px;
+
+    .contact h2 {
+      font-family: var(--serif);
+      font-size: 60px;
+      font-weight: 500;
+      line-height: 0.95;
+      margin-bottom: 20px;
     }
- 
-    .detail {
+
+    .contact-description {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 450px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 25px;
+    }
+
+    .contact-item {
       display: flex;
-      gap: 13px;
+      gap: 18px;
+      align-items: flex-start;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #d8c6b4;
     }
- 
-    .detail-icon {
-      flex: 0 0 40px;
-      height: 40px;
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--creme);
-      color: var(--marrom);
+      background: var(--brown);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .contact-item small {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--caramel);
+      font-size: 8px;
       font-weight: 700;
+      margin-bottom: 5px;
     }
- 
-    .detail strong {
-      display: block;
-      font-size: 13px;
-      color: var(--marrom-escuro);
+
+    .contact-item strong {
+      font-size: 14px;
+      font-weight: 500;
     }
- 
-    .detail span {
-      display: block;
-      color: var(--cinza);
-      font-size: 13px;
-      margin-top: 2px;
-    }
- 
-    .contact-card {
-      background: var(--marrom-escuro);
-      color: white;
-      padding: 42px;
-      border-radius: 6px;
-    }
- 
-    .contact-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 32px;
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
- 
-    .contact-card p {
-      color: rgba(255,255,255,.64);
-      font-size: 13px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
- 
-    .contact-card .button {
-      width: 100%;
-    }
- 
-    /* ================= FOOTER ================= */
- 
+
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
-      background: #170c07;
+      background: var(--espresso);
       color: white;
-      padding: 30px 0;
+      padding: 30px 7%;
     }
- 
-    .footer {
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
       display: flex;
       justify-content: space-between;
+      gap: 20px;
       align-items: center;
     }
- 
-    .footer-brand {
-      font-family: "Playfair Display", serif;
-      font-size: 19px;
+
+    footer p {
+      color: rgba(255,255,255,0.45);
+      font-size: 10px;
     }
- 
-    .footer-copy {
-      color: rgba(255,255,255,.4);
-      font-size: 11px;
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 25px;
     }
- 
-    /* ================= WHATSAPP ================= */
- 
+
+    /* =========================
+       WHATSAPP FLOAT
+    ========================= */
+
     .whatsapp {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
+      right: 25px;
+      bottom: 25px;
       width: 58px;
       height: 58px;
-      border-radius: 50%;
-      background: var(--whatsapp);
+      background: #25D366;
       color: white;
-      display: grid;
-      place-items: center;
-      z-index: 100;
-      font-size: 22px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.22);
-      transition: .3s;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(37,211,102,0.35);
+      font-size: 25px;
+      transition: 0.3s;
+      animation: whatsappPulse 2.5s infinite;
     }
- 
+
     .whatsapp:hover {
       transform: scale(1.08);
     }
- 
-    /* ================= RESPONSIVO ================= */
- 
-    @media (max-width: 900px) {
- 
-      nav a:not(.nav-button) {
-        display: none;
+
+    @keyframes whatsappPulse {
+      0%, 100% {
+        box-shadow: 0 10px 30px rgba(37,211,102,0.3);
       }
- 
-      .intro-grid,
-      .difference-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
- 
-      .steps {
-        grid-template-columns: 1fr 1fr;
-      }
- 
-      .difference-grid {
-        gap: 55px;
-      }
- 
-      .gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 240px 240px 240px;
-      }
- 
-      .gallery-item:first-child {
-        grid-column: 1 / 3;
-        grid-row: 1 / 2;
+
+      50% {
+        box-shadow: 0 10px 45px rgba(37,211,102,0.55);
       }
     }
- 
-    @media (max-width: 620px) {
- 
-      section {
-        padding: 75px 0;
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      header {
+        padding: 16px 5%;
       }
- 
-      .container {
-        width: 88%;
+
+      nav {
+        display: none;
       }
- 
+
       .hero {
-        min-height: 700px;
-        background-position: 62% center;
+        min-height: 90vh;
+        background-position: 65% center;
       }
- 
-      h1 {
-        font-size: 49px;
+
+      .hero-content {
+        padding-top: 60px;
       }
- 
-      .hero p {
-        font-size: 16px;
+
+      .hero h1 {
+        font-size: 62px;
       }
- 
-      .buttons {
-        flex-direction: column;
-      }
- 
-      .button {
-        width: 100%;
-      }
- 
-      .trust-grid {
+
+      .intro-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 45px;
       }
- 
-      .trust-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,.12);
-        padding-bottom: 12px;
+
+      .feature-grid {
+        grid-template-columns: 1fr;
       }
- 
-      .trust-item:last-child {
-        border: none;
+
+      .feature + .feature {
+        border-left: none;
+        border-top: 1px solid #dfd0c1;
       }
- 
-      .intro-image {
-        height: 340px;
-      }
- 
+
       .gallery {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 280px);
+        grid-template-rows: 350px 250px 250px;
       }
- 
+
       .gallery-item:first-child {
-        grid-column: auto;
         grid-row: auto;
       }
- 
-      .features {
+
+      .gallery-overlay {
+        opacity: 1;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .step:nth-child(2)::after {
+        display: none;
+      }
+
+      .portfolio-header {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .contact h2 {
+        font-size: 50px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .process-grid {
         grid-template-columns: 1fr;
       }
- 
-      .steps {
-        grid-template-columns: 1fr;
+
+      .step::after {
+        display: none !important;
       }
- 
-      .contact-card {
-        padding: 30px;
-      }
- 
-      .footer {
+
+      .footer-inner {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+      }
+
+      .whatsapp {
+        right: 18px;
+        bottom: 18px;
       }
     }
   </style>
 </head>
- 
+
 <body>
- 
-  <!-- ================= HEADER ================= -->
- 
-  <header>
-    <div class="container nav">
- 
-      <a href="#" class="logo">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header id="header">
+    <div class="nav">
+
+      <a href="#inicio" class="logo">
         Marcos Meira
         <span>Móveis Planejados</span>
       </a>
- 
+
       <nav>
+        <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
-        <a href="#diferenciais">Diferenciais</a>
         <a href="#processo">Como funciona</a>
- 
+        <a href="#contato">Contato</a>
+
         <a
-          href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+          href="https://wa.me/5573988667520?text=Olá!%20Vi%20o%20site%20da%20Marcos%20Meira%20-%20Móveis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20orçamento."
           target="_blank"
-          class="nav-button"
+          class="nav-cta"
         >
           Solicitar orçamento
         </a>
       </nav>
- 
+
     </div>
   </header>
- 
- 
-  <!-- ================= HERO ================= -->
- 
-  <section class="hero">
- 
-    <div class="container">
- 
-      <div class="hero-content">
- 
-        <div class="eyebrow">
-          Móveis planejados sob medida
-        </div>
- 
-        <h1>
-          Seu espaço.<br>
-          Do seu jeito.
-        </h1>
- 
-        <p>
-          Projetos planejados para aproveitar melhor cada ambiente,
-          unir funcionalidade e beleza e transformar suas ideias em
-          espaços pensados para a sua rotina.
-        </p>
- 
-        <div class="buttons">
- 
-          <a
-            href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
-            target="_blank"
-            class="button button-primary"
-          >
-            Quero meu orçamento
-          </a>
- 
-          <a href="#projetos" class="button button-outline">
-            Ver projetos
-          </a>
- 
-        </div>
- 
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Móveis planejados • Ilhéus — BA
       </div>
- 
-    </div>
- 
-  </section>
- 
- 
-  <!-- ================= TRUST ================= -->
- 
-  <div class="trust">
- 
-    <div class="container trust-grid">
- 
-      <div class="trust-item">
-        <strong>Projetos sob medida</strong>
-        Pensados para cada ambiente
-      </div>
- 
-      <div class="trust-item">
-        <strong>Atendimento personalizado</strong>
-        Do projeto à execução
-      </div>
- 
-      <div class="trust-item">
-        <strong>Ilhéus — Bahia</strong>
-        Atendimento local
-      </div>
- 
-    </div>
- 
-  </div>
- 
- 
-  <!-- ================= INTRO ================= -->
- 
-  <section class="intro">
- 
-    <div class="container intro-grid">
- 
-      <div>
- 
-        <div class="label">
-          Um projeto pensado para você
-        </div>
- 
-        <h2 class="title">
-          Mais aproveitamento. Mais organização. Mais identidade.
-        </h2>
- 
-        <p class="text">
-          Móveis planejados permitem que cada detalhe do ambiente
-          seja pensado de acordo com suas necessidades, medidas
-          e estilo.
-        </p>
- 
-        <div class="benefits">
- 
-          <div class="benefit">
-            <span class="check">✓</span>
-            Aproveitamento inteligente do espaço
-          </div>
- 
-          <div class="benefit">
-            <span class="check">✓</span>
-            Projeto pensado para sua rotina
-          </div>
- 
-          <div class="benefit">
-            <span class="check">✓</span>
-            Escolha de acabamentos e composição
-          </div>
- 
-          <div class="benefit">
-            <span class="check">✓</span>
-            Atendimento personalizado
-          </div>
- 
-        </div>
- 
-      </div>
- 
- 
-      <!-- Foto do cliente: quarto planejado, vista para o mar -->
- 
-      <div class="intro-image">
-        <img
-          src="__QUARTO1__"
-          alt="Quarto planejado com vista para o mar"
-        >
-      </div>
- 
-    </div>
- 
-  </section>
- 
- 
-  <!-- ================= PROJETOS ================= -->
- 
-  <section class="projects" id="projetos">
- 
-    <div class="container">
- 
-      <div class="center-heading">
- 
-        <div class="label">
-          Projetos
-        </div>
- 
-        <h2 class="title">
-          Ambientes que mostram o potencial de um bom planejamento.
-        </h2>
- 
-        <p class="text">
-          Inspire-se em diferentes soluções e imagine o seu próximo projeto.
-        </p>
- 
-      </div>
- 
- 
-      <div class="gallery">
- 
-        <!-- Foto do cliente: cozinha planejada -->
- 
-        <div class="gallery-item">
- 
-          <img
-            src="__COZINHA__"
-            alt="Cozinha planejada"
-          >
- 
-          <span class="photo-label">
-            Cozinha planejada
-          </span>
- 
-        </div>
- 
- 
-        <!-- Foto do cliente: quarto, vista para o mar -->
- 
-        <div class="gallery-item">
- 
-          <img
-            src="__QUARTO1__"
-            alt="Quarto planejado com vista para o mar"
-          >
- 
-          <span class="photo-label">
-            Quarto — vista mar
-          </span>
- 
-        </div>
- 
- 
-        <!-- Foto do cliente: quarto planejado -->
- 
-        <div class="gallery-item">
- 
-          <img
-            src="__QUARTO2__"
-            alt="Quarto planejado"
-          >
- 
-          <span class="photo-label">
-            Quarto planejado
-          </span>
- 
-        </div>
- 
- 
-        <!-- Foto do cliente: sala de estar -->
- 
-        <div class="gallery-item">
- 
-          <img
-            src="__SALA__"
-            alt="Sala de estar planejada"
-          >
- 
-          <span class="photo-label">
-            Sala de estar
-          </span>
- 
-        </div>
- 
- 
-        <!-- Foto do cliente: sala de jantar -->
- 
-        <div class="gallery-item">
- 
-          <img
-            src="__SALAJANTAR__"
-            alt="Sala de jantar planejada"
-          >
- 
-          <span class="photo-label">
-            Sala de jantar
-          </span>
- 
-        </div>
- 
-      </div>
- 
-    </div>
- 
-  </section>
- 
- 
-  <!-- ================= DIFERENCIAIS ================= -->
- 
-  <section class="difference" id="diferenciais">
- 
-    <div class="container difference-grid">
- 
-      <div>
- 
-        <div class="label">
-          Por que planejar?
-        </div>
- 
-        <h2 class="title">
-          Cada centímetro pode fazer diferença.
-        </h2>
- 
-        <p class="text">
-          Um móvel planejado não precisa apenas preencher um espaço.
-          Ele pode facilitar a rotina, organizar melhor o ambiente
-          e deixar a casa mais alinhada ao seu estilo.
-        </p>
- 
-      </div>
- 
- 
-      <div class="features">
- 
-        <div class="feature">
- 
-          <span class="feature-number">
-            01
-          </span>
- 
-          <h3>
-            Medidas precisas
-          </h3>
- 
-          <p>
-            Uma solução pensada para o ambiente e para o espaço disponível.
-          </p>
- 
-        </div>
- 
- 
-        <div class="feature">
- 
-          <span class="feature-number">
-            02
-          </span>
- 
-          <h3>
-            Seu estilo
-          </h3>
- 
-          <p>
-            Composição e acabamentos escolhidos para combinar com você.
-          </p>
- 
-        </div>
- 
- 
-        <div class="feature">
- 
-          <span class="feature-number">
-            03
-          </span>
- 
-          <h3>
-            Mais organização
-          </h3>
- 
-          <p>
-            Espaços planejados para deixar a rotina mais prática.
-          </p>
- 
-        </div>
- 
- 
-        <div class="feature">
- 
-          <span class="feature-number">
-            04
-          </span>
- 
-          <h3>
-            Projeto personalizado
-          </h3>
- 
-          <p>
-            Cada ambiente parte das necessidades reais de quem vai utilizá-lo.
-          </p>
- 
-        </div>
- 
-      </div>
- 
-    </div>
- 
-  </section>
- 
- 
-  <!-- ================= PROCESSO ================= -->
- 
-  <section class="process" id="processo">
- 
-    <div class="container">
- 
-      <div class="center-heading">
- 
-        <div class="label">
-          Como funciona
-        </div>
- 
-        <h2 class="title">
-          Seu projeto começa com uma conversa.
-        </h2>
- 
-      </div>
- 
- 
-      <div class="steps">
- 
-        <div class="step">
- 
-          <div class="step-number">
-            01
-          </div>
- 
-          <h3>
-            Conte o que você precisa
-          </h3>
- 
-          <p>
-            Chame no WhatsApp e fale sobre o ambiente que deseja transformar.
-          </p>
- 
-        </div>
- 
- 
-        <div class="step">
- 
-          <div class="step-number">
-            02
-          </div>
- 
-          <h3>
-            Definimos o projeto
-          </h3>
- 
-          <p>
-            Conversamos sobre medidas, necessidades, estilo e possibilidades.
-          </p>
- 
-        </div>
- 
- 
-        <div class="step">
- 
-          <div class="step-number">
-            03
-          </div>
- 
-          <h3>
-            Produção
-          </h3>
- 
-          <p>
-            Com o projeto aprovado, começa a etapa de produção dos móveis.
-          </p>
- 
-        </div>
- 
- 
-        <div class="step">
- 
-          <div class="step-number">
-            04
-          </div>
- 
-          <h3>
-            Instalação
-          </h3>
- 
-          <p>
-            O projeto sai do papel e passa a fazer parte do seu ambiente.
-          </p>
- 
-        </div>
- 
-      </div>
- 
-    </div>
- 
-  </section>
- 
- 
-  <!-- ================= CTA ================= -->
- 
-  <section class="cta">
- 
-    <div class="container">
- 
-      <div class="label">
-        Pronto para começar?
-      </div>
- 
-      <h2 class="title">
-        Vamos conversar sobre o ambiente que você quer transformar.
-      </h2>
- 
-      <p>
-        Conte o que você tem em mente e fale diretamente com
-        a Marcos Meira Móveis Planejados.
+
+      <h1>
+        Seu espaço,<br>
+        <em>do seu jeito.</em>
+      </h1>
+
+      <p class="hero-description">
+        Projetos planejados para transformar ambientes em espaços
+        funcionais, sofisticados e feitos para fazer parte da sua história.
       </p>
- 
-      <a
-        href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
-        target="_blank"
-        class="button button-primary"
-      >
-        Solicitar orçamento pelo WhatsApp
-      </a>
- 
-    </div>
- 
-  </section>
- 
- 
-  <!-- ================= CONTATO ================= -->
- 
-  <section class="contact" id="contato">
- 
-    <div class="container contact-grid">
- 
-      <div>
- 
-        <div class="label">
-          Fale conosco
-        </div>
- 
-        <h2 class="title">
-          Seu próximo projeto pode começar agora.
-        </h2>
- 
-        <p class="text">
-          Entre em contato para conversar sobre o ambiente,
-          suas necessidades e as possibilidades para o seu projeto.
-        </p>
- 
- 
-        <div class="details">
- 
-          <div class="detail">
- 
-            <div class="detail-icon">
-              W
-            </div>
- 
-            <div>
-              <strong>WhatsApp</strong>
-              <span>(73) 98866-7520</span>
-            </div>
- 
-          </div>
- 
- 
-          <div class="detail">
- 
-            <div class="detail-icon">
-              @
-            </div>
- 
-            <div>
-              <strong>E-mail</strong>
-              <span>mmeira04@gmail.com</span>
-            </div>
- 
-          </div>
- 
- 
-          <div class="detail">
- 
-            <div class="detail-icon">
-              ⌖
-            </div>
- 
-            <div>
-              <strong>Endereço</strong>
- 
-              <span>
-                R. Parque Verde, 250 — Hernani Sá<br>
-                Ilhéus — BA, 45656-623
-              </span>
- 
-            </div>
- 
-          </div>
- 
-        </div>
- 
-      </div>
- 
- 
-      <div class="contact-card">
- 
-        <h3>
-          Vamos falar do seu projeto?
-        </h3>
- 
-        <p>
-          O primeiro passo é simples: envie uma mensagem e conte
-          qual ambiente você deseja planejar.
-        </p>
- 
+
+      <div class="hero-buttons">
+
         <a
-          href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+          href="https://wa.me/5573988667520?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20móveis%20planejados."
           target="_blank"
-          class="button button-primary"
+          class="btn btn-primary"
         >
-          Falar pelo WhatsApp
+          Falar pelo WhatsApp →
         </a>
- 
+
+        <a href="#projetos" class="btn btn-outline">
+          Ver projetos
+        </a>
+
       </div>
- 
+
     </div>
- 
+
+    <div class="scroll-indicator">
+      Descubra
+    </div>
+
   </section>
- 
- 
-  <!-- ================= FOOTER ================= -->
- 
-  <footer>
- 
-    <div class="container footer">
- 
-      <div class="footer-brand">
-        Marcos Meira — Móveis Planejados
+
+
+  <!-- =========================
+       INTRO
+  ========================== -->
+
+  <section class="intro reveal" id="sobre">
+
+    <div class="intro-grid">
+
+      <div>
+        <div class="section-number">01 — Sobre</div>
+
+        <h2>
+          Ambientes que<br>
+          <span>fazem sentido.</span>
+        </h2>
       </div>
- 
-      <div class="footer-copy">
-        © 2026 Marcos Meira Móveis Planejados
+
+      <div class="intro-text">
+
+        <p>
+          Na Marcos Meira — Móveis Planejados, cada projeto nasce
+          da combinação entre estética, funcionalidade e personalidade.
+        </p>
+
+        <p>
+          A proposta é criar móveis que aproveitem cada espaço,
+          valorizem o ambiente e tenham a identidade de quem vive nele.
+        </p>
+
+        <p>
+          Do primeiro contato ao resultado final, cada detalhe é pensado
+          para entregar um projeto bonito, funcional e sob medida.
+        </p>
+
       </div>
- 
+
     </div>
- 
+
+  </section>
+
+
+  <!-- =========================
+       DIFERENCIAIS
+  ========================== -->
+
+  <section class="features">
+
+    <div class="section-header reveal">
+
+      <div class="small-title">
+        O que fazemos
+      </div>
+
+      <h2>
+        Planejado para você.
+      </h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <div class="feature reveal">
+
+        <div class="feature-icon">
+          ✦
+        </div>
+
+        <h3>Sob medida</h3>
+
+        <p>
+          Cada projeto é pensado para aproveitar
+          o ambiente da melhor maneira possível.
+        </p>
+
+      </div>
+
+
+      <div class="feature reveal">
+
+        <div class="feature-icon">
+          ◇
+        </div>
+
+        <h3>Elegância</h3>
+
+        <p>
+          Design atemporal e escolhas que valorizam
+          o ambiente sem exageros.
+        </p>
+
+      </div>
+
+
+      <div class="feature reveal">
+
+        <div class="feature-icon">
+          ✓
+        </div>
+
+        <h3>Funcionalidade</h3>
+
+        <p>
+          Beleza e praticidade trabalhando juntas
+          em cada detalhe do projeto.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJETOS
+  ========================== -->
+
+  <section class="portfolio" id="projetos">
+
+    <div class="portfolio-header reveal">
+
+      <div>
+
+        <div class="section-number">
+          02 — Projetos
+        </div>
+
+        <h2>
+          Espaços<br>
+          com personalidade.
+        </h2>
+
+      </div>
+
+      <p>
+        Conheça alguns dos trabalhos e possibilidades
+        que podem transformar completamente um ambiente.
+      </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+      <!--
+        TROQUE OS NOMES DAS IMAGENS ABAIXO
+        PELAS FOTOS REAIS DA MARCENARIA.
+      -->
+
+      <div class="gallery-item reveal">
+
+        <img
+          src="foto-projeto-1.jpg"
+          alt="Projeto de móveis planejados"
+        />
+
+        <div class="gallery-overlay">
+          <span>Projeto planejado</span>
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item reveal">
+
+        <img
+          src="foto-projeto-2.jpg"
+          alt="Móveis planejados"
+        />
+
+        <div class="gallery-overlay">
+          <span>Detalhes</span>
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item reveal">
+
+        <img
+          src="foto-projeto-3.jpg"
+          alt="Ambiente planejado"
+        />
+
+        <div class="gallery-overlay">
+          <span>Seu ambiente</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROCESSO
+  ========================== -->
+
+  <section class="process" id="processo">
+
+    <div class="section-header reveal">
+
+      <div class="small-title">
+        Como funciona
+      </div>
+
+      <h2>
+        Do projeto à realidade.
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <div class="step reveal">
+
+        <div class="step-number">
+          01
+        </div>
+
+        <h3>Conversa</h3>
+
+        <p>
+          Você conta o que precisa, suas preferências
+          e o que deseja transformar.
+        </p>
+
+      </div>
+
+
+      <div class="step reveal">
+
+        <div class="step-number">
+          02
+        </div>
+
+        <h3>Projeto</h3>
+
+        <p>
+          Pensamos em uma solução personalizada
+          para o seu ambiente.
+        </p>
+
+      </div>
+
+
+      <div class="step reveal">
+
+        <div class="step-number">
+          03
+        </div>
+
+        <h3>Produção</h3>
+
+        <p>
+          O projeto ganha forma seguindo as
+          especificações definidas.
+        </p>
+
+      </div>
+
+
+      <div class="step reveal">
+
+        <div class="step-number">
+          04
+        </div>
+
+        <h3>Entrega</h3>
+
+        <p>
+          O resultado chega ao seu ambiente
+          pronto para fazer parte da sua rotina.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================== -->
+
+  <section class="cta">
+
+    <div class="cta-content reveal">
+
+      <div class="small-title">
+        Vamos começar?
+      </div>
+
+      <h2>
+        Seu próximo ambiente<br>
+        começa aqui.
+      </h2>
+
+      <p>
+        Conte o que você está imaginando.
+        Vamos conversar sobre o seu projeto.
+      </p>
+
+      <a
+        href="https://wa.me/5573988667520?text=Olá!%20Vi%20o%20site%20da%20Marcos%20Meira%20-%20Móveis%20Planejados%20e%20quero%20conversar%20sobre%20um%20projeto."
+        target="_blank"
+        class="btn btn-primary"
+      >
+        Solicitar orçamento pelo WhatsApp →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTATO
+  ========================== -->
+
+  <section class="contact" id="contato">
+
+    <div class="contact-grid">
+
+      <div class="reveal">
+
+        <div class="section-number">
+          03 — Contato
+        </div>
+
+        <h2>
+          Vamos criar<br>
+          juntos.
+        </h2>
+
+        <p class="contact-description">
+          Tem um ambiente que precisa de uma nova solução?
+          Entre em contato e conte um pouco sobre o seu projeto.
+        </p>
+
+      </div>
+
+
+      <div class="contact-info reveal">
+
+        <a
+          class="contact-item"
+          href="https://wa.me/5573988667520"
+          target="_blank"
+        >
+
+          <div class="contact-icon">
+            ☎
+          </div>
+
+          <div>
+            <small>WhatsApp</small>
+            <strong>(73) 98866-7520</strong>
+          </div>
+
+        </a>
+
+
+        <a
+          class="contact-item"
+          href="mailto:mmeira04@gmail.com"
+        >
+
+          <div class="contact-icon">
+            @
+          </div>
+
+          <div>
+            <small>E-mail</small>
+            <strong>mmeira04@gmail.com</strong>
+          </div>
+
+        </a>
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            ⌖
+          </div>
+
+          <div>
+            <small>Endereço</small>
+            <strong>
+              R. Parque Verde, 250 - Hernani Sá,<br>
+              Ilhéus - BA, 45656-623
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+        Marcos Meira
+      </div>
+
+      <p>
+        © 2026 Marcos Meira — Móveis Planejados.
+        Todos os direitos reservados.
+      </p>
+
+    </div>
+
   </footer>
- 
- 
-  <!-- ================= WHATSAPP FLUTUANTE ================= -->
- 
+
+
+  <!-- =========================
+       WHATSAPP
+  ========================== -->
+
   <a
     class="whatsapp"
+    href="https://wa.me/5573988667520?text=Olá!%20Vi%20o%20site%20da%20Marcos%20Meira%20-%20Móveis%20Planejados%20e%20gostaria%20de%20fazer%20um%20orçamento."
     target="_blank"
-    aria-label="Abrir WhatsApp"
-    href="https://wa.me/5573988667520?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcos%20Meira%20M%C3%B3veis%20Planejados%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+    aria-label="Falar no WhatsApp"
   >
-    W
+    ☎
   </a>
- 
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* Header muda ao rolar */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+    /* Animações ao entrar na tela */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+
+    /* Pequeno efeito de movimento no hero */
+
+    const hero = document.querySelector(".hero");
+
+    window.addEventListener("scroll", () => {
+
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition < window.innerHeight) {
+
+        hero.style.backgroundPositionY =
+          `${scrollPosition * 0.25}px`;
+
+      }
+
+    });
+
+  </script>
+
 </body>
 </html>
- 
-
-
