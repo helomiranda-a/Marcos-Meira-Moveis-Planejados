@@ -497,23 +497,19 @@
     }
 
     .gallery {
-      max-width: 1150px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      grid-template-rows: 300px 300px;
-      gap: 15px;
-    }
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
 
-    .gallery-item {
-      overflow: hidden;
-      position: relative;
-      background: linear-gradient(135deg, #6e4b37, #b98b65);
-    }
-
-    .gallery-item:first-child {
-      grid-row: span 2;
-    }
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #6e4b37, #b98b65);
+[}
 
     .gallery-item img {
       width: 100%;
@@ -1171,7 +1167,7 @@
     <span>Quarto marcenaria</span>
   </div>
 </div>
-        </div>
+
 
       </div>
 
